@@ -13,6 +13,17 @@ public class DrinksMockup {
         drinks.add(new Drink("Hot Drinks", "Hot chocklete", 20));
 
         drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
+        drinks.add(new Drink("Hot Drinks", "Tea", 12));
 
         drinks.add(new Drink("Cocacola", "Cocacola", 5));
 
@@ -34,4 +45,6 @@ public class DrinksMockup {
         String[] cats = {"Cold Drinks", "Hot Drinks", "Cocacola", "Fresh"};
         return cats;
     }
+
+
 }

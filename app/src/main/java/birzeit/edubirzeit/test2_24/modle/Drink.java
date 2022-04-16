@@ -1,5 +1,7 @@
 package birzeit.edubirzeit.test2_24.modle;
 
+import androidx.annotation.NonNull;
+
 public class Drink {
     private String catigory;
     private String name;
@@ -36,4 +38,9 @@ public class Drink {
         UnitPrice = unitPrice;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return getName()+", Price: "+getUnitPrice();
+    }
 }

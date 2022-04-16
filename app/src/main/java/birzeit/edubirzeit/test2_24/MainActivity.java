@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import birzeit.edubirzeit.test2_24.modle.Drink;
 import birzeit.edubirzeit.test2_24.modle.DrinksMockup;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText edtDrinks;
+    private ListView lstDrinks;
     private Spinner spinner;
     
     @Override
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setViews() {
-        edtDrinks = findViewById(R.id.button_res);
+        lstDrinks = findViewById(R.id.lstDrinks);
         spinner = findViewById(R.id.spinner);
     }
 
@@ -50,11 +51,9 @@ public class MainActivity extends AppCompatActivity {
         DrinksMockup database = new DrinksMockup();
 
         ArrayList<Drink> result = database.getDrinks(cat);
-        String str = "";
-        for (Drink d : result){
-            str += d.getName()+", Price: "+d.getUnitPrice() + "\n";
-        }
 
-        edtDrinks.setText(str);
+        ArrayAdapter<Drink> lstAdapter = new ArrayAdapter<Drink>(this,
+                android.R.layout.simple_list_item_1, result);
+        lstDrinks.setAdapter(lstAdapter);
     }
 }
