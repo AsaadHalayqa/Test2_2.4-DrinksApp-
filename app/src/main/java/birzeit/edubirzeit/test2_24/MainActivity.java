@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 
 import java.util.ArrayList;
 
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         setSpinner();
 
+        toastMsgOnClick();
+
     }
 
     private void setSpinner() {
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, cats);
 
         spinner.setAdapter(adapter);
+
     }
 
     private void setViews() {
@@ -55,5 +61,22 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<Drink> lstAdapter = new ArrayAdapter<Drink>(this,
                 android.R.layout.simple_list_item_1, result);
         lstDrinks.setAdapter(lstAdapter);
+
+
+
+
+    }
+
+    private void toastMsgOnClick() {
+        lstDrinks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    final int position, long id) {
+
+                Toast.makeText(getApplicationContext(), lstDrinks.getItemAtPosition(position).toString(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
